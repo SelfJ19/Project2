@@ -29,12 +29,12 @@ public class Hand
 
     #region Hand()
     /// <summary>
-    /// Default Hand constructor
+    /// Default Hand constructor sets the HandSize to 5 by default
     /// </summary>
     public Hand()
     {
         GameHand = new Card();
-        HandSize = 0;
+        HandSize = 5;
         CardsInHand = 0;
     }
     #endregion

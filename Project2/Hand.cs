@@ -41,9 +41,9 @@ public class Hand
 
     #region Hand(HandSize)
     /// <summary>
-    /// 
+    /// public Hand that accepts an integer handSize
     /// </summary>
-    /// <param name="handSize"></param>
+    /// <param name="handSize">stores the user input for the size of their hand of cards</param>
     public Hand(int handSize)
     {
 
@@ -52,9 +52,9 @@ public class Hand
 
     #region Hand(existingHand)
     /// <summary>
-    /// 
+    /// Creates a deep copy of the Hand constructor
     /// </summary>
-    /// <param name="existingHand"></param>
+    /// <param name="existingHand">copies the existing hand</param>
     public Hand(Hand existingHand)
     {
 
@@ -63,9 +63,9 @@ public class Hand
 
     #region AddACard(Card)
     /// <summary>
-    /// 
+    /// Creates the AddACard constructor that accepts a card of the Card class
     /// </summary>
-    /// <param name="card"></param>
+    /// <param name="card">stores a card of the Card class when adding a card</param>
     public void AddACard(Card card)
     { 
            
@@ -74,9 +74,9 @@ public class Hand
 
     #region ToString()
     /// <summary>
-    /// 
+    /// ToString method that formats the return ToString
     /// </summary>
-    /// <returns></returns>
+    /// <returns>the format wanted for displaying the hand of cards a player is dealt</returns>
     public override string ToString()
     {
         return base.ToString();

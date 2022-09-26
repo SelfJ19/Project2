@@ -10,31 +10,76 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 using System;
+using System.Xml;
+
 namespace CardClass;
 
+/// <summary>
+/// creates the public class Hand
+/// </summary>
 public class Hand
 {
+    /// <summary>
+    /// get and set attributes for public class Hand
+    /// </summary>
     public Card GameHand { get; set; }
     public int HandSize { get; set; }
     public int CardsInHand { get; set; }
 
-    #region Hand()
 
+    #region Hand()
+    /// <summary>
+    /// Default Hand constructor
+    /// </summary>
+    public Hand()
+    {
+        GameHand = new Card();
+        HandSize = 0;
+        CardsInHand = 0;
+    }
     #endregion
 
     #region Hand(HandSize)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="handSize"></param>
+    public Hand(int handSize)
+    {
 
+    }
     #endregion
 
     #region Hand(existingHand)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="existingHand"></param>
+    public Hand(Hand existingHand)
+    {
 
+    }
     #endregion
 
     #region AddACard(Card)
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="card"></param>
+    public void AddACard(Card card)
+    { 
+           
+    }
     #endregion
 
     #region ToString()
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        return base.ToString();
+    }
     #endregion
 }

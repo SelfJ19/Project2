@@ -40,5 +40,9 @@ public class DeckDriver
         Console.WriteLine(defaultDeck.DealAHand(6));
         defaultDeck.DealAHand(6);
         Console.WriteLine(defaultDeck.DealAHand(6));
+
+        Console.WriteLine("How many cards are in one hand? \n");
+
+        Console.WriteLine("How many players are playing? \n");
     }
 }

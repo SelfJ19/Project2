@@ -22,7 +22,7 @@ public class Hand
     /// <summary>
     /// get and set attributes for public class Hand
     /// </summary>
-    public Card GameHand { get; set; }
+    public Card[] GameHand { get; set; }
     public int HandSize { get; set; }
     public int CardsInHand { get; set; }
 
@@ -33,7 +33,7 @@ public class Hand
     /// </summary>
     public Hand()
     {
-        GameHand = new Card();
+        GameHand = new Card[52];
         HandSize = 5;
         CardsInHand = 0;
     }
@@ -46,6 +46,7 @@ public class Hand
     /// <param name="handSize">stores the user input for the size of their hand of cards</param>
     public Hand(int handSize)
     {
+        HandSize = handSize;
 
     }
     #endregion
@@ -57,7 +58,12 @@ public class Hand
     /// <param name="existingHand">copies the existing hand</param>
     public Hand(Hand existingHand)
     {
-
+        GameHand = new Card[existingHand.GameHand.Length];
+        // Loop that makes all cards at their repsective indexes in DeckCards equal to the existing deck which makes an exact copy
+        for (int i = 0; i < GameHand.Length; i++)
+        {
+            GameHand[i] = existingHand.GameHand[i];
+        }
     }
     #endregion
 

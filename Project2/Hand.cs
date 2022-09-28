@@ -36,6 +36,11 @@ public class Hand
         GameHand = new Card[52];
         HandSize = 5;
         CardsInHand = 0;
+
+        for (int i = 0; i < GameHand.Length; i++)
+        {
+            GameHand[i] = new Card(i);
+        }
     }
     #endregion
 
@@ -47,7 +52,6 @@ public class Hand
     public Hand(int handSize)
     {
         HandSize = handSize;
-
     }
     #endregion
 
@@ -59,7 +63,7 @@ public class Hand
     public Hand(Hand existingHand)
     {
         GameHand = new Card[existingHand.GameHand.Length];
-        // Loop that makes all cards at their repsective indexes in DeckCards equal to the existing deck which makes an exact copy
+        // Loop that makes all cards at their repsective indexes in GameHand equal to the existing hand which makes an exact copy
         for (int i = 0; i < GameHand.Length; i++)
         {
             GameHand[i] = existingHand.GameHand[i];
@@ -74,7 +78,8 @@ public class Hand
     /// <param name="card">stores a card of the Card class when adding a card</param>
     public void AddACard(Card card)
     { 
-           
+        GameHand[CardsInHand] = card;
+        CardsInHand++;           
     }
     #endregion
 
@@ -85,7 +90,13 @@ public class Hand
     /// <returns>the format wanted for displaying the hand of cards a player is dealt</returns>
     public override string ToString()
     {
-        return base.ToString();
+        string HandStrings = "";
+        for (int i = 0; i < GameHand.Length; i++)
+        {
+            HandStrings += GameHand[i].ToString();
+            HandStrings += "\n";
+        }
+        return HandStrings;
     }
     #endregion
 }

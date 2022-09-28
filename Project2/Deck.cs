@@ -97,14 +97,14 @@ public class Deck
     /// </summary>
     /// <param name="handSize"></param>
     /// <returns></returns>
-    public string DealAHand(int handSize)
+    public Hand DealAHand(int handSize)
      {
-        string hand = "";
+        Hand hand = new Hand();
         // Loop that deals one card using DealACard() at a time until it has dealt handSize number of cards
         for (int i = 0; i <= handSize; i++)
         {
-            hand += DealACard();
-            hand += "\n";
+            Card card = DealACard();
+            hand.AddACard(card);
         }
         return hand;
     }

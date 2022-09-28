@@ -24,6 +24,7 @@ public class DeckDriver
     /// </summary>
     public static void Main()
     {
+        bool validDeck = false;
         // makes a new deck and prints it using the writeline
         Deck defaultDeck = new Deck();
         Console.WriteLine("The original deck of cards:\n");
@@ -36,13 +37,57 @@ public class DeckDriver
 
         // prints 2 hands of seven cards using the DealAHand method
         Console.WriteLine("\nTwo hands of seven cards each from the copied deck:\n");
-        defaultDeck.DealAHand(6);
-        Console.WriteLine(defaultDeck.DealAHand(6));
-        defaultDeck.DealAHand(6);
-        Console.WriteLine(defaultDeck.DealAHand(6));
+        Hand handSize1 = defaultDeck.DealAHand(6);
+        for (int i = 0; i < handSize1.GameHand.Length; i++)
+        {
+            if (i <= 6)
+            {
+                Console.WriteLine(handSize1.GameHand[i].ToString());
+            }
+        }
+        Console.WriteLine("\n");
+        Hand handSize2 = defaultDeck.DealAHand(6);
+        for (int i = 0; i < handSize2.GameHand.Length; i++)
+        {
+            if (i <= 6)
+            {
+                Console.WriteLine(handSize2.GameHand[i].ToString());
+            }
+        }
 
-        Console.WriteLine("How many cards are in one hand? \n");
+        do
+        {
+            // asks the user how many cards are in each player's hand and stores it as handSize
+            Console.WriteLine("How many cards are in one hand? \n");
+            int handSize = Int32.Parse(Console.ReadLine()) - 1;
 
-        Console.WriteLine("How many players are playing? \n");
+            // ask the user how many players are playing and stores it as playerSize
+            Console.WriteLine("How many players are playing? \n");
+            int playerSize = Int32.Parse(Console.ReadLine());
+
+            if ((playerSize * handSize) > defaultDeck.DeckCards.Length)
+            {
+                Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + handSize + " cards. Try again. \n");
+            }
+            else
+            {
+                validDeck = true;
+                for (int playerIndex = 0; playerIndex < playerSize; playerIndex++)
+                { 
+                    Console.WriteLine("Player " + (playerIndex+1) + ":");
+                    Hand playerHand = new Hand();
+                    playerHand = defaultDeck.DealAHand(handSize);
+                    
+                    for(int i = 0; i < playerHand.GameHand.Length; i++)
+                    {
+                        if (i <= handSize)
+                        {
+                            Console.WriteLine(playerHand.GameHand[i].ToString());
+                        }
+                    }
+                }
+                //validDeck = true;
+            }
+        } while (validDeck == false);
     }
 }

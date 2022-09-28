@@ -55,10 +55,11 @@ public class DeckDriver
             }
         }
 
+        // Do-while loop to iterate the error message until a valid deck size can be used
         do
         {
             // asks the user how many cards are in each player's hand and stores it as handSize
-            Console.WriteLine("How many cards are in one hand? \n");
+            Console.WriteLine("\nHow many cards are in one hand? \n");
             int handSize = Int32.Parse(Console.ReadLine()) - 1;
 
             // ask the user how many players are playing and stores it as playerSize
@@ -74,7 +75,7 @@ public class DeckDriver
                 validDeck = true;
                 for (int playerIndex = 0; playerIndex < playerSize; playerIndex++)
                 { 
-                    Console.WriteLine("Player " + (playerIndex+1) + ":");
+                    Console.WriteLine("\nPlayer " + (playerIndex+1) + ":");
                     Hand playerHand = new Hand();
                     playerHand = defaultDeck.DealAHand(handSize);
                     
@@ -86,7 +87,6 @@ public class DeckDriver
                         }
                     }
                 }
-                //validDeck = true;
             }
         } while (validDeck == false);
     }

@@ -26,7 +26,6 @@ public class Hand
     public int HandSize { get; set; }
     public int CardsInHand { get; set; }
 
-
     #region Hand()
     /// <summary>
     /// Default Hand constructor sets the HandSize to 5 by default

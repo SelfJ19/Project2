@@ -35,7 +35,7 @@ public class Hand
         GameHand = new Card[52];
         HandSize = 5;
         CardsInHand = 0;
-
+        // loop to make a new card using the size of the GameHand array
         for (int i = 0; i < GameHand.Length; i++)
         {
             GameHand[i] = new Card(i);
@@ -86,7 +86,7 @@ public class Hand
     /// <summary>
     /// ToString method that formats the return ToString
     /// </summary>
-    /// <returns>the format wanted for displaying the hand of cards a player is dealt</returns>
+    /// <returns>the format wanted for displaying the hand of cards a player is dealt using the ToString from card</returns>
     public override string ToString()
     {
         string HandStrings = "";

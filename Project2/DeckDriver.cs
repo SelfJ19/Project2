@@ -63,7 +63,8 @@ public class DeckDriver
         // Do-while loop to iterate the error message until a validDeck size can be used while it is false
         do
         {
-            // asks the user how many cards are in each player's hand and stores it as handSize
+            // asks the user how many cards are in each player's hand and stores it as handSize and subtracts one to set it equal to the correct number of cards in hand
+            // and not the index size
             Console.WriteLine("\nHow many cards are in one hand? \n");
             int handSize = Int32.Parse(Console.ReadLine()) - 1;
 

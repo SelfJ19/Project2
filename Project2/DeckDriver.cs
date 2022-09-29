@@ -60,7 +60,7 @@ public class DeckDriver
             }
         }
         
-        // Do-while loop to iterate the error message until a validDeck size can be used while it is false
+        // Do-while loop to iterate the error message until a validDeck size can be used while validDeck is false
         do
         {
             // asks the user how many cards are in each player's hand and stores it as handSize and subtracts one to set it equal to the correct number of cards in hand

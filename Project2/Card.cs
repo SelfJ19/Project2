@@ -38,7 +38,7 @@ namespace CardClass
         /// <summary>
         /// copy constructor
         /// </summary>
-        /// <param name="existingCard"></param>
+        /// <param name="existingCard">copies the existing card to Face and Suit</param>
         public Card(Card existingCard)
         {
             Face = existingCard.Face;
@@ -50,7 +50,7 @@ namespace CardClass
         /// <summary>
         /// parameterized constructor
         /// </summary>
-        /// <param name="n"></param>
+        /// <param name="n">number of cards in the deck</param>
         public Card(int n)
         {
             Face = (Face)Enum.GetValues(typeof(Face)).GetValue(n % 13);
@@ -62,7 +62,7 @@ namespace CardClass
         /// <summary>
         /// ToString method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns the ToString format for outputting a card</returns>
         public override string ToString()
         {
             string info = "";

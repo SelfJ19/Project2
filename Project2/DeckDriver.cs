@@ -20,7 +20,7 @@ namespace CardClass;
 public class DeckDriver
 {
     /// <summary>
-    /// The Main method that creates a new deck, copies it, and deals 2 hands of seven cards
+    /// The Main method that creates a new deck, copies it, and deals 2 hands of seven cards and players and cards for the players based on user input for playerSize and handSize
     /// </summary>
     public static void Main()
     {

@@ -82,7 +82,7 @@ public class Deck
     /// <summary>
     /// DealACard method
     /// </summary>
-    /// <returns></returns>
+    /// <returns>returns the value stored in newCard</returns>
     public Card DealACard()
     {
         Card newCard = DeckCards[NextCard];
@@ -95,8 +95,8 @@ public class Deck
     /// <summary>
     /// DealAHand method
     /// </summary>
-    /// <param name="handSize"></param>
-    /// <returns></returns>
+    /// <param name="handSize">handSize stores the handSize of the user in an int variable</param>
+    /// <returns>returns the hand of cards based on users input for handSize</returns>
     public Hand DealAHand(int handSize)
      {
         Hand hand = new Hand();
@@ -114,7 +114,7 @@ public class Deck
     /// <summary>
     /// ToString method that returns all cards once from the deck array
     /// </summary>
-    /// <returns></returns>
+    /// <returns>returns the DeckString format for the entire deck using the ToString of Card</returns>
     public override string ToString()
     {
         string DeckStrings = "";

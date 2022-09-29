@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Project: Project 2 Hand-Deck-Cards
-// File Name: Faces.cs
+// File Name: Face.cs
 // Description: Represents the faces of cards in a deck
 // Course: CSCI 1260-001 – Introduction to Computer Science II
 // Author: Jason Self, selfj1@etsu.edu, East Tennessee State University

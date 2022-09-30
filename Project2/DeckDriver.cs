@@ -40,26 +40,26 @@ public class DeckDriver
         Console.WriteLine("\nTwo hands of seven cards each from the copied deck:\n");
         Hand handSize1 = defaultDeck.DealAHand(6);
 
-        // loop to print out a handSize of 7 cards 
-        for (int i = 0; i < handSize1.GameHand.Length; i++)
+        // loop to print out a handSize of 7 cards for hand 1
+        for (int i = 0; i < handSize1.CardsInHand; i++)
         {
-            if (i <= 6)
-            {
-                Console.WriteLine(handSize1.GameHand[i].ToString());
-            }
+            Console.WriteLine(handSize1.GameHand[i].ToString());
         }
         Console.WriteLine("\n");
 
-        // loop to print out another handSize of 7 cards 
+        // loop to print out another handSize of 7 cards for hand 2
         Hand handSize2 = defaultDeck.DealAHand(6);
-        for (int i = 0; i < handSize2.GameHand.Length; i++)
+        for (int i = 0; i < handSize2.CardsInHand; i++)
         {
-            if (i <= 6)
-            {
-                Console.WriteLine(handSize2.GameHand[i].ToString());
-            }
+            Console.WriteLine(handSize2.GameHand[i].ToString());  
         }
         
+        // creates a new default deck to be used for the users input that hasn't had cards removed from it like the original defaultDeck had doing the two hands of 7
+        Deck defaultDeck2 = new Deck();
+
+        // shuffles the new default deck
+        defaultDeck2.Shuffle();
+
         // Do-while loop to iterate the error message until a validDeck size can be used while validDeck is false
         do
         {
@@ -74,7 +74,7 @@ public class DeckDriver
 
             // loop to check if the users input goes outside the bounds of the size of the Deck array
             // if it is bigger prints out the error message until they enter a valid deck size
-            if ((playerSize * handSize) > defaultDeck.DeckCards.Length)
+            if ((playerSize * handSize) > defaultDeck2.DeckCards.Length)
             {
                 Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + handSize + " cards. Try again. \n");
             }
@@ -85,17 +85,14 @@ public class DeckDriver
                 validDeck = true;
                 for (int playerIndex = 0; playerIndex < playerSize; playerIndex++)
                 { 
-                    Console.WriteLine("\nPlayer " + (playerIndex+1) + ":");
+                    Console.WriteLine("\nPlayer " + (playerIndex + 1) + ":");
                     Hand playerHand = new Hand();
-                    playerHand = defaultDeck.DealAHand(handSize);
+                    playerHand = defaultDeck2.DealAHand(handSize);
                     
                     // loop that uses the card ToString to print out the cards in hand based on users handSize
-                    for(int i = 0; i < playerHand.GameHand.Length; i++)
+                    for(int i = 0; i <= handSize; i++)
                     {
-                        if (i <= handSize)
-                        {
-                            Console.WriteLine(playerHand.GameHand[i].ToString());
-                        }
+                        Console.WriteLine(playerHand.GameHand[i].ToString()); 
                     }
                 }
             }

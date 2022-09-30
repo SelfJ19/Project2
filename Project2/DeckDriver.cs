@@ -53,7 +53,10 @@ public class DeckDriver
         {
             Console.WriteLine(handSize2.GameHand[i].ToString());  
         }
-        
+
+        // creates a copy of the shuffled deck
+        Deck copyDeck = new Deck(defaultDeck);
+
         // creates a new default deck to be used for the users input that hasn't had cards removed from it like the original defaultDeck had doing the two hands of 7
         Deck defaultDeck2 = new Deck();
 

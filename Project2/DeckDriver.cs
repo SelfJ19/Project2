@@ -38,7 +38,7 @@ public class DeckDriver
 
         // prints 2 hands of seven cards using the DealAHand method
         Console.WriteLine("\nTwo hands of seven cards each from the copied deck:\n");
-        Hand handSize1 = defaultDeck.DealAHand(6);
+        Hand handSize1 = defaultDeck.DealAHand(7);
 
         // loop to print out a handSize of 7 cards for hand 1
         for (int i = 0; i < handSize1.CardsInHand; i++)
@@ -48,7 +48,7 @@ public class DeckDriver
         Console.WriteLine("\n");
 
         // loop to print out another handSize of 7 cards for hand 2
-        Hand handSize2 = defaultDeck.DealAHand(6);
+        Hand handSize2 = defaultDeck.DealAHand(7);
         for (int i = 0; i < handSize2.CardsInHand; i++)
         {
             Console.WriteLine(handSize2.GameHand[i].ToString());  
@@ -66,7 +66,7 @@ public class DeckDriver
             // asks the user how many cards are in each player's hand and stores it as handSize and subtracts one to set it equal to the correct number of cards in hand
             // and not the index size
             Console.WriteLine("\nHow many cards are in one hand? \n");
-            int handSize = Int32.Parse(Console.ReadLine()) - 1;
+            int handSize = Int32.Parse(Console.ReadLine());
 
             // ask the user how many players are playing and stores it as playerSize
             Console.WriteLine("How many players are playing? \n");
@@ -76,7 +76,7 @@ public class DeckDriver
             // if it is bigger prints out the error message until they enter a valid deck size
             if ((playerSize * handSize) > defaultDeck2.DeckCards.Length)
             {
-                Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + (handSize + 1) + " cards. Try again. \n");
+                Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + handSize  + " cards. Try again. \n");
             }
             else
             {
@@ -90,7 +90,7 @@ public class DeckDriver
                     playerHand = defaultDeck2.DealAHand(handSize);
                     
                     // loop that uses the card ToString to print out the cards in hand based on users handSize
-                    for(int i = 0; i <= handSize; i++)
+                    for(int i = 0; i < handSize; i++)
                     {
                         Console.WriteLine(playerHand.GameHand[i].ToString()); 
                     }

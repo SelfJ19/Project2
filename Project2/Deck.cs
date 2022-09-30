@@ -101,7 +101,7 @@ public class Deck
      {
         Hand hand = new Hand();
         // Loop that deals one card using DealACard() at a time until it has dealt handSize number of cards
-        for (int i = 0; i <= handSize; i++)
+        for (int i = 0; i < handSize; i++)
         {
             Card card = DealACard();
             hand.AddACard(card);

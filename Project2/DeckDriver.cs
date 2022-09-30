@@ -76,7 +76,7 @@ public class DeckDriver
             // if it is bigger prints out the error message until they enter a valid deck size
             if ((playerSize * handSize) > defaultDeck2.DeckCards.Length)
             {
-                Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + handSize + " cards. Try again. \n");
+                Console.WriteLine($"Error: There are not enough cards in the deck to deal " + playerSize + " hands of " + (handSize + 1) + " cards. Try again. \n");
             }
             else
             {
